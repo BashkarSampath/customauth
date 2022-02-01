@@ -1,0 +1,71 @@
+--- 
+server: 
+  port: 8441
+  ssl.enabled: false
+logging: 
+  level: 
+    ROOT: INFO
+    com.bashkarsampath: INFO
+    org.apache.kafka: ERROR
+    org.hibernate: ERROR
+    org.springframework: INFO
+    org.springframework.secuity: ERROR
+    org.springframework.web: ERROR
+    org.springframework.ws.client.MessageTracing.received: ERROR
+    org.springframework.ws.client.MessageTracing.sent: ERROR
+    org.springframework.ws.server.MessageTracing.received: ERROR
+    org.springframework.ws.server.MessageTracing.sent: ERROR
+    reactor.netty.http.client: false
+spring: 
+  config: 
+    enabled: true
+  datasource: 
+    initialization-mode: always
+    password: root
+    platform: postgres
+    url: "jdbc:postgresql://localhost:5432/postgres"
+    username: postgres
+  jackson: 
+    default-property-inclusion: non-null
+    deserialization: 
+      fail-on-unknown-properties: true
+      fail-on-unresolved-object-ids: true
+    mapper: 
+      accept-case-insensitive-enums: true
+  jpa: 
+    hibernate.ddl-auto: validate
+    properties.hibernate: 
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      jdbc.lob.non_contextual_creation: true
+    show-sql: false
+  main: 
+    allow-bean-definition-overriding: true
+    banner-mode: console
+  mvc: 
+    throw-exception-if-no-handler-found: true
+  security: 
+    oauth2.client.registration: 
+      google: 
+        accessTokenUri: "https://oauth2.googleapis.com/token"
+        auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs"
+        authenticationScheme: query
+        clientAuthenticationScheme: form
+        clientId: 91929299680-c642ggu1tmsueabir9vb8mnd4qprf6gg.apps.googleusercontent.com
+        clientSecret: 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
+        javascript_origins: 
+          - "http://localhost:8441"
+        project_id: gmail-337305
+        redirect_uris: 
+          - "http://localhost:8441/login/oauth2/code/google"
+        scope: 
+          - email
+          - profile
+        tokenName: oauth_token
+        userAuthorizationUri: "https://accounts.google.com/o/oauth2/auth"
+springdoc: 
+  api-docs.path: /v2/api-docs
+  swagger-ui: 
+    disable-swagger-default-url: true
+    display-request-duration: true
+    groups-order: DESC
+    operationsSorter: method
