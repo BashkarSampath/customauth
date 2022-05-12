@@ -51,7 +51,7 @@ spring:
         authenticationScheme: query
         clientAuthenticationScheme: form
         clientId: 91929299680-c642ggu1tmsueabir9vb8mnd4qprf6gg.apps.googleusercontent.com
-        clientSecret: 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
+        clientSecret: ''
         javascript_origins: 
           - "http://localhost:8441"
         project_id: gmail-337305
